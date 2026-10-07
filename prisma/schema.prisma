@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  username     String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("ADMIN")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model ScrapEnquiry {
+  id                  String       @id @default(cuid())
+  enquiryNumber       String       @unique
+  companyName         String
+  contactPerson       String
+  phone               String
+  whatsapp            String?
+  email               String?
+  scrapType           String
+  approximateQuantity Float?
+  quantityUnit        String       @default("TON")
+  pickupAddress       String
+  city                String?
+  industrialArea      String?
+  pincode             String?
+  scrapDescription    String?
+  preferredPickupDate String?
+  preferredPickupTime String?
+  additionalMessage   String?
+  status              String       @default("NEW")
+  assignedPerson      String?
+  adminNotes          String?
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+
+  images              ScrapImage[]
+  quotations          Quotation[]
+  pickups             Pickup[]
+  contactLogs         ContactLog[]
+}
+
+model ScrapImage {
+  id        String       @id @default(cuid())
+  enquiryId String
+  enquiry   ScrapEnquiry @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+  fileUrl   String
+  fileName  String
+  fileType  String       @default("IMAGE") // IMAGE or VIDEO
+  fileSize  Int?
+  createdAt DateTime     @default(now())
+}
+
+model Quotation {
+  id                String       @id @default(cuid())
+  enquiryId         String
+  enquiry           ScrapEnquiry @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+  materialType      String
+  estimatedQuantity String
+  rate              Float
+  unit              String       @default("KG")
+  estimatedTotal    Float
+  notes             String?
+  status            String       @default("ACTIVE")
+  createdBy         String?
+  createdAt         DateTime     @default(now())
+}
+
+model Pickup {
+  id            String       @id @default(cuid())
+  enquiryId     String
+  enquiry       ScrapEnquiry @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+  scheduledDate String
+  scheduledTime String?
+  driverName    String?
+  vehicleNumber String?
+  notes         String?
+  status        String       @default("SCHEDULED")
+  createdAt     DateTime     @default(now())
+}
+
+model ContactLog {
+  id            String       @id @default(cuid())
+  enquiryId     String
+  enquiry       ScrapEnquiry @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+  contactMethod String       @default("PHONE")
+  summary       String
+  loggedBy      String?
+  createdAt     DateTime     @default(now())
+}
+
+model RegularContractRequest {
+  id                         String   @id @default(cuid())
+  companyName                String
+  contactPerson              String
+  phone                      String
+  location                   String
+  scrapType                  String
+  approximateMonthlyQuantity String
+  pickupFrequency            String
+  additionalRequirements     String?
+  status                     String   @default("NEW")
+  createdAt                  DateTime @default(now())
+}

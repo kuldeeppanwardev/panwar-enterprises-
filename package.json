@@ -1,0 +1,36 @@
+{
+  "name": "panwar-enterprises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "5.22.0",
+    "bcryptjs": "^3.0.3",
+    "cookie": "^2.0.1",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^1.52.0",
+    "next": "^14.2.15",
+    "prisma": "5.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^26.6.4",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
+}

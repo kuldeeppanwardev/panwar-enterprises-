@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="copBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1015"/>
+      <stop offset="100%" stop-color="#1A181C"/>
+    </linearGradient>
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="35%" stop-color="#EA580C"/>
+      <stop offset="70%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#9A3412"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#copBg)"/>
+  
+  <g transform="translate(130, 90)">
+    <!-- Heavy Copper Busbars -->
+    <rect x="50" y="240" width="460" height="40" rx="4" fill="url(#copperGrad)" stroke="#FFEDD5" stroke-width="1.5"/>
+    <rect x="70" y="295" width="420" height="40" rx="4" fill="url(#copperGrad)" opacity="0.9"/>
+    <rect x="40" y="350" width="480" height="45" rx="4" fill="url(#copperGrad)" opacity="0.95"/>
+
+    <!-- Copper Coils & Winding -->
+    <ellipse cx="280" cy="150" rx="170" ry="60" fill="none" stroke="url(#copperGrad)" stroke-width="22"/>
+    <ellipse cx="280" cy="150" rx="120" ry="40" fill="none" stroke="#EA580C" stroke-width="14"/>
+
+    <text x="60" y="460" fill="#FB923C" font-family="system-ui, sans-serif" font-weight="bold" font-size="16" letter-spacing="2">HEAVY COPPER BUSBARS &amp; TRANSFORMER WIRE LOT</text>
+  </g>
+</svg>

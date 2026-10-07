@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="amberGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="steelSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="50%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Industrial Recycling Geometric Monogram / Icon -->
+  <g transform="translate(10, 10)">
+    <!-- Outer Hexagonal Flow Node -->
+    <polygon points="40,2 76,22 76,64 40,84 4,64 4,22" fill="#131B24" stroke="url(#steelSilver)" stroke-width="2.5"/>
+    <!-- Dynamic Industrial Recycling Flow Segments -->
+    <!-- Segment 1: Top-Right (Amber Gold) -->
+    <path d="M 40 12 L 68 28 L 68 45 L 56 38 L 56 28 L 40 19 Z" fill="url(#amberGold)"/>
+    <!-- Segment 2: Bottom-Right (Steel Silver) -->
+    <path d="M 68 53 L 40 70 L 24 61 L 34 55 L 40 59 L 58 48 Z" fill="url(#steelSilver)"/>
+    <!-- Segment 3: Left Return (Industrial Amber) -->
+    <path d="M 22 55 L 12 36 L 28 20 L 36 28 L 22 36 L 28 50 Z" fill="url(#amberGold)"/>
+    
+    <!-- Central Metallic Core -->
+    <polygon points="40,32 50,38 50,52 40,58 30,52 30,38" fill="#1E293B" stroke="url(#amberGold)" stroke-width="2"/>
+    <circle cx="40" cy="45" r="4" fill="#F59E0B"/>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(105, 20)">
+    <!-- Main Title -->
+    <text x="0" y="32" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="28" letter-spacing="2.5" fill="#FFFFFF">
+      PANWAR <tspan fill="#F59E0B">ENTERPRISES</tspan>
+    </text>
+    
+    <!-- Subtitle / Tagline -->
+    <text x="2" y="55" font-family="'Inter', system-ui, -apple-system, sans-serif" font-weight="600" font-size="12" letter-spacing="4" fill="#94A3B8">
+      INDUSTRIAL SCRAP SOLUTIONS
+    </text>
+    
+    <!-- Experience Badge Accent -->
+    <rect x="360" y="16" width="64" height="19" rx="3" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+    <text x="392" y="29.5" font-family="system-ui, sans-serif" font-weight="800" font-size="10.5" fill="#FBBF24" text-anchor="middle" letter-spacing="0.5">35+ YRS</text>
+  </g>
+</svg>
